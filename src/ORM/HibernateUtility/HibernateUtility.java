@@ -1,5 +1,6 @@
 package ORM.HibernateUtility;
 
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -20,6 +21,6 @@ public class HibernateUtility {
     }
 
     private static SessionFactory buildSessionFactory() {
-        return new Configuration().configure().buildSessionFactory();
+        return new Configuration().configure("ORM/HibernateResources/hibernate.cfg.xml").buildSessionFactory();
     }
 }

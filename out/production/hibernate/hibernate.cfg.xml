@@ -5,26 +5,20 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">
-            jdbc:mysql://localhost:3306/
+        jdbc:sqlserver://localhost:3306
     </property>
-        <property name = "connection.driver_class">
-            com.mysql.jdbc.Driver
+        <property name = "hibernate.connection.driver_class">
+            com.microsoft.sqlserver.jdbc.SQLServerDriver
         </property>
 
         <property name="connection.username">
-            danny
+            Danny
         </property>
         <property name="connection.password">
         database
         </property>
 
-        <property name="hbm2ddl.auto">
-            update
-        </property>
-
-        <property name="hibernate.hbm2ddl.auto">validate</property>
-
-        <mapping class ="ORM.Entity.testEntity"/>
         <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>
