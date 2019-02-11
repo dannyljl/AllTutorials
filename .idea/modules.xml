@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hibernate/Hibernate.iml" filepath="$PROJECT_DIR$/Hibernate/Hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/RestTutorial.iml" filepath="$PROJECT_DIR$/RestTutorial.iml" />
     </modules>
   </component>
