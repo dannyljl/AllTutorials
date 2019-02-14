@@ -14,7 +14,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="ORM:HibernateResources:hibernate.cfg.xml" value="cb75b474-d00b-416b-ae35-7e1ac465e7fe" />
+          <unit-entry name="ORM:HibernateResources:hibernate.cfg.xml" value="297d51bd-5151-4b94-828c-9d736fd24bd3" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/ORM/HibernateResources/hibernate.cfg.xml" />
@@ -63,7 +63,6 @@
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
-    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.46" level="project" />
   </component>
 </module>

@@ -18,7 +18,7 @@ public class Test {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String message(){
-        manager.CreateTest();
+        //manager.CreateTest();
         return "hi";
     }
 }

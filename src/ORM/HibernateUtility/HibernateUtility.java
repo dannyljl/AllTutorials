@@ -21,6 +21,8 @@ public class HibernateUtility {
     }
 
     private static SessionFactory buildSessionFactory() {
-        return new Configuration().configure("ORM/HibernateResources/hibernate.cfg.xml").buildSessionFactory();
+        Configuration cfg = new Configuration().setProperty("hibernate.dialect","org.hibernate.dialect.MySQLInnoDBDialect");
+        return cfg.configure("ORM/HibernateResources/hibernate.cfg.xml").buildSessionFactory();
+
     }
 }
