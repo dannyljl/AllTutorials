@@ -7,7 +7,7 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <user-name>danny</user-name>
+      <user-name>root</user-name>
       <introspection-schemas>*:@,testschema</introspection-schemas>
     </data-source>
   </component>
