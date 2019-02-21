@@ -20,6 +20,8 @@ public class Test {
     @Produces(MediaType.TEXT_PLAIN)
     public String message(){
         manager.CreateTest();
-        return "hi";
+        manager.CreateUser();
+        manager.CreateKweet();
+        return Integer.toString(manager.GetKweet().getUser().getUserId());
     }
 }
