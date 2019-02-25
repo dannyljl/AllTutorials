@@ -22,6 +22,8 @@ public class Test {
         manager.CreateTest();
         manager.CreateUser();
         manager.CreateKweet();
+        manager.CreateUser();
+        manager.CreateFollower();
         return Integer.toString(manager.GetKweet().getUser().getUserId());
     }
 }

@@ -52,4 +52,18 @@ public class testManager {
         return kweet;
     }
 
+    public void CreateFollower(){
+        UserEntity user1 = new UserEntity();
+        UserEntity user2 = new UserEntity();
+        user1.setUserId(1);
+        user2.setUserId(2);
+        user1.AddFollower(user2);
+
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.merge(user1);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

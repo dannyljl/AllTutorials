@@ -1,9 +1,11 @@
 package ORM.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.nio.MappedByteBuffer;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class UserEntity {
@@ -12,8 +14,6 @@ public class UserEntity {
 
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getUserId() {
         return userId;
     }
@@ -22,6 +22,8 @@ public class UserEntity {
         this.userId = id;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String name;
     private String location;
@@ -68,4 +70,26 @@ public class UserEntity {
     public void setImage(String image) {
         this.image = image;
     }
+
+
+    public void AddFollower(UserEntity follower){
+        followers.add(follower);
+    }
+
+    public List<UserEntity> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(List<UserEntity> followers) {
+        this.followers = followers;
+    }
+
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="followers",
+            joinColumns={@JoinColumn(name="followedId")},
+            inverseJoinColumns={@JoinColumn(name="followerId")})
+    @ElementCollection(targetClass = UserEntity.class)
+    private List<UserEntity> followers = new ArrayList<>();
+
 }
