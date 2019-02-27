@@ -1,5 +1,7 @@
 package Server;
 
+import ORM.Manager.KweetManager;
+import ORM.Manager.UserManager;
 import ORM.Manager.testManager;
 
 import javax.inject.Inject;
@@ -15,6 +17,8 @@ public class Test {
     //private EJBInterface ejbinterface;
 
     private testManager manager = new testManager();
+    KweetManager kweetManager = new KweetManager();
+    private UserManager userManager = new UserManager();
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -24,6 +28,8 @@ public class Test {
         manager.CreateKweet();
         manager.CreateUser();
         manager.CreateFollower();
-        return Integer.toString(manager.GetKweet().getUser().getUserId());
+        kweetManager.getTimeLine(1);
+        userManager.getUser(2);
+        return kweetManager.getTimeLine(1).get(0).getContent() + Integer.toString(manager.GetKweet().getUser().getUserId() + userManager.getUser(1).getFollowers().size()) + kweetManager.getTimeLine(2).get(0).getContent();
     }
 }

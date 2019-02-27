@@ -26,10 +26,28 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String name;
+    private String username;
+    private String password;
     private String location;
     private String web;
     private String bio;
     private String image;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -84,12 +102,26 @@ public class UserEntity {
         this.followers = followers;
     }
 
-
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="followers",
             joinColumns={@JoinColumn(name="followedId")},
             inverseJoinColumns={@JoinColumn(name="followerId")})
     @ElementCollection(targetClass = UserEntity.class)
     private List<UserEntity> followers = new ArrayList<>();
+
+    public List<UserEntity> getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(List<UserEntity> following) {
+        this.following = following;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name="followers",
+            joinColumns={@JoinColumn(name="followerId")},
+            inverseJoinColumns={@JoinColumn(name="followedId")})
+    @ElementCollection(targetClass = UserEntity.class)
+    private List<UserEntity> following = new ArrayList<>();
 
 }
