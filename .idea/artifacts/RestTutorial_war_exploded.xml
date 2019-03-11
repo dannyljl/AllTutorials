@@ -30,6 +30,7 @@
           <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.1" />
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.4.Final" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
+          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:2.3.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

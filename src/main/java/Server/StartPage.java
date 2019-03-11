@@ -29,4 +29,13 @@ public class StartPage {
         return "success";
     }
 
+    @Path("search")
+    @POST
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String SearchKweet(String searchcontent){
+        Gson gson = new Gson();
+        return gson.toJson(kweetManager.SearchKweet(searchcontent));
+
+    }
 }

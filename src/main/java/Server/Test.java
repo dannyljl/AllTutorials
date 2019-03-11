@@ -30,6 +30,6 @@ public class Test {
         manager.CreateFollower();
         kweetManager.getTimeLine(1);
         userManager.getUser(2);
-        return kweetManager.getTimeLine(1).get(0).getContent() + Integer.toString(manager.GetKweet().getUser().getUserId() + userManager.getUser(1).getFollowers().size()) + kweetManager.getTimeLine(2).get(0).getContent();
+        return kweetManager.getTimeLine(1).get(0).getContent() + Integer.toString(manager.GetKweet().getUser().getUserId() + userManager.getUser(1).getFollowersId().size()) + kweetManager.getTimeLine(2).get(0).getContent();
     }
 }

@@ -1,5 +1,7 @@
 package ORM.Manager;
 
+import DTO.UserDTO;
+import Json.UserJson;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import Utility.HibernateUtility;
@@ -10,11 +12,12 @@ public class UserManager {
 
     private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
 
-    public UserEntity getUser(int id){
+    public UserDTO getUser(int id){
         Session session = sessionFactory.openSession();
         UserEntity user = session.get(UserEntity.class, id);
         session.close();
-        return user;
+
+        return new UserDTO(user);
     }
 
     public void CreateFollower(int followed, int follower){
@@ -29,5 +32,21 @@ public class UserManager {
         session.merge(user1);
         session.getTransaction().commit();
         session.close();
+    }
+
+    public UserDTO editUser(int id, UserDTO userJson){
+        UserEntity user = new UserEntity();
+        user.setUserId(id);
+        user.setUsername(userJson.getUsername());
+        user.setBio(userJson.getBio());
+        user.setLocation(userJson.getLocation());
+        user.setWeb(userJson.getWeb());
+
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.merge(user);
+        session.getTransaction().commit();
+        session.close();
+        return new UserDTO(user);
     }
 }
