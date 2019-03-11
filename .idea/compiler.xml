@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="RestTutorial" options="-endorseddirs &quot;C:\Users\Danny\Desktop\Semester 6\RestTutorial\target/endorsed&quot;" />
+      <module name="RestTutorial" options="-endorseddirs &quot;C:\Users\danny\Desktop\school\semester 6\JEA\AllTutorials\target/endorsed&quot;" />
     </option>
   </component>
 </project>

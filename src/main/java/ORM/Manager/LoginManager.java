@@ -2,23 +2,26 @@ package ORM.Manager;
 
 import ORM.Entity.UserEntity;
 import Utility.HibernateUtility;
+import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 public class LoginManager {
 
-    private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+    @Inject
+    private MySessionFactory mySessionFactory;
 
 
     public UserEntity attemptLogin(String username, String password){
         UserEntity userEntity = null;
 
 
-            Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<UserEntity> criteriaQuery = criteriaBuilder.createQuery(UserEntity.class);
             Root<UserEntity> root = criteriaQuery.from(UserEntity.class);
@@ -34,7 +37,7 @@ public class LoginManager {
         UserEntity userEntity = null;
 
 
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<UserEntity> criteriaQuery = criteriaBuilder.createQuery(UserEntity.class);
         Root<UserEntity> root = criteriaQuery.from(UserEntity.class);
@@ -48,10 +51,9 @@ public class LoginManager {
         UserEntity user = new UserEntity();
         user.setUsername(username);
         user.setPassword(password);
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.save(user);
         session.getTransaction().commit();
-        session.close();
     }
 }

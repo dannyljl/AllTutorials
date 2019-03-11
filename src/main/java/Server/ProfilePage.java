@@ -4,6 +4,7 @@ import DTO.UserDTO;
 import ORM.Manager.UserManager;
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.awt.*;
@@ -11,8 +12,9 @@ import java.awt.*;
 @Path("/profilePage/{visitorId}")
 public class ProfilePage {
 
-    UserManager userManager = new UserManager();
-    Gson gson = new Gson();
+    @Inject
+    private UserManager userManager = new UserManager();
+    private Gson gson = new Gson();
 
     @Path("{visitedId}")
     @POST
@@ -24,7 +26,7 @@ public class ProfilePage {
 
     @Path("{visitedId}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public String followUser(@PathParam("visitedId") int visitedId){
         return gson.toJson(userManager.getUser(visitedId));
     }

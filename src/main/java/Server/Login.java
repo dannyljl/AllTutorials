@@ -4,6 +4,7 @@ import ORM.Entity.UserEntity;
 import ORM.Manager.LoginManager;
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -13,6 +14,7 @@ public class Login {
     //@Inject
     //private EJBInterface ejbinterface;
 
+    @Inject
     private LoginManager loginManager = new LoginManager();
 
     @POST

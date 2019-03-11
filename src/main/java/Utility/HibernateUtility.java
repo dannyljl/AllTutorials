@@ -4,23 +4,30 @@ package Utility;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.enterprise.inject.Produces;
+import javax.inject.Singleton;
+
+@Singleton
 public class HibernateUtility {
-    private HibernateUtility() {
+
+    private SessionFactory sessionFactory;
+
+
+    @PostConstruct
+    private void buildSessionFactory() {
+        sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
-    private static SessionFactory sessionFactory;
-
-    public static SessionFactory getSessionFactory() {
-        if(sessionFactory == null)
-            sessionFactory = buildSessionFactory();
+    @Produces
+    public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 
-    public static void closeSessionFactory() {
+    @PreDestroy
+    public void closeSessionFactory() {
         sessionFactory.close();
     }
 
-    private static SessionFactory buildSessionFactory() {
-        return new Configuration().configure().buildSessionFactory();
-    }
 }

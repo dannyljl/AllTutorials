@@ -16,20 +16,23 @@ public class Test {
     //@Inject
     //private EJBInterface ejbinterface;
 
-    private testManager manager = new testManager();
-    KweetManager kweetManager = new KweetManager();
-    private UserManager userManager = new UserManager();
+    @Inject
+    private testManager manager;
+    @Inject
+    private KweetManager kweetManager;
+    @Inject
+    private UserManager userManager;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String message(){
-        manager.CreateTest();
         manager.CreateUser();
         manager.CreateKweet();
         manager.CreateUser();
         manager.CreateFollower();
-        kweetManager.getTimeLine(1);
+        //kweetManager.getTimeLine(1);
         userManager.getUser(2);
-        return kweetManager.getTimeLine(1).get(0).getContent() + Integer.toString(manager.GetKweet().getUser().getUserId() + userManager.getUser(1).getFollowersId().size()) + kweetManager.getTimeLine(2).get(0).getContent();
+        return "success";
+        //return kweetManager.getTimeLine(1).get(0).getContent() + Integer.toString(manager.GetKweet().getUser().getUserId() + userManager.getUser(1).getFollowersId().size()) + kweetManager.getTimeLine(2).get(0).getContent();
     }
 }

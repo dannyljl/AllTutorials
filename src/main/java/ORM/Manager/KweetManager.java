@@ -5,9 +5,11 @@ import DTO.UserDTO;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import Utility.HibernateUtility;
+import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -18,11 +20,12 @@ import java.util.List;
 
 public class KweetManager {
 
-    private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+    @Inject
+    private MySessionFactory mySessionFactory;
 
 
     public List<KweetDTO> getTimeLine(int userId){
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         UserEntity user = session.get(UserEntity.class,userId);
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -57,21 +60,20 @@ public class KweetManager {
         Date date = new Date(utilDate.getTime());
         kweet.setDate(date);
         kweet.setUser(user);
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.save(kweet);
         session.getTransaction().commit();
-        session.close();
     }
 
     public List<KweetDTO> SearchKweet(String searchContent){
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
+        List<KweetDTO> kweets = new ArrayList<>();
         String query = "from KweetEntity where content like ?1";
         Query query2 = session.createQuery(query).setParameter(1,"%" + searchContent + "%");
         for (KweetEntity kweet : (List<KweetEntity>) query2.getResultList()){
-
+            kweets.add(new KweetDTO(kweet));
         }
-
-
+        return kweets;
     }
 }

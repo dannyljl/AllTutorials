@@ -4,31 +4,33 @@ import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import ORM.Entity.testEntity;
 import Utility.HibernateUtility;
+import Utility.MySessionFactory;
 import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
 import java.sql.Date;
 
 public class testManager {
-    private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+
+    @Inject
+    private MySessionFactory mySessionFactory;
 
     public void CreateTest(){
         testEntity test = new testEntity();
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.save(test);
         session.getTransaction().commit();
-        session.close();
     }
 
     public void CreateUser(){
         UserEntity usertest = new UserEntity();
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.save(usertest);
         session.getTransaction().commit();
-        session.close();
     }
 
     public void CreateKweet(){
@@ -38,17 +40,15 @@ public class testManager {
         kweet.setContent("testcontent");
         kweet.setDate(new Date(12));
         kweet.setUser(user);
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.save(kweet);
         session.getTransaction().commit();
-        session.close();
     }
 
     public KweetEntity GetKweet(){
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         KweetEntity kweet = session.get(KweetEntity.class,1);
-        session.close();
         return kweet;
     }
 
@@ -59,11 +59,10 @@ public class testManager {
         user2.setUserId(2);
         user1.AddFollower(user2);
 
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.merge(user1);
         session.getTransaction().commit();
-        session.close();
     }
 
 }

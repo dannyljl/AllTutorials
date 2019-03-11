@@ -5,17 +5,20 @@ import Json.UserJson;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import Utility.HibernateUtility;
+import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
+
 public class UserManager {
 
-    private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+    @Inject
+    private MySessionFactory mySessionFactory;
 
     public UserDTO getUser(int id){
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         UserEntity user = session.get(UserEntity.class, id);
-        session.close();
 
         return new UserDTO(user);
     }
@@ -27,11 +30,10 @@ public class UserManager {
         user2.setUserId(follower);
         user1.AddFollower(user2);
 
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.merge(user1);
         session.getTransaction().commit();
-        session.close();
     }
 
     public UserDTO editUser(int id, UserDTO userJson){
@@ -42,11 +44,10 @@ public class UserManager {
         user.setLocation(userJson.getLocation());
         user.setWeb(userJson.getWeb());
 
-        Session session = sessionFactory.openSession();
+        Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
         session.merge(user);
         session.getTransaction().commit();
-        session.close();
         return new UserDTO(user);
     }
 }
