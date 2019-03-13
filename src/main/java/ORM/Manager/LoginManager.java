@@ -6,11 +6,13 @@ import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+@Stateless
 public class LoginManager {
 
     @Inject

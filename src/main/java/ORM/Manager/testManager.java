@@ -9,9 +9,11 @@ import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.sql.Date;
 
+@Stateless
 public class testManager {
 
     @Inject

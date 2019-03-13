@@ -9,6 +9,7 @@ import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -18,6 +19,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+@Stateless
 public class KweetManager {
 
     @Inject

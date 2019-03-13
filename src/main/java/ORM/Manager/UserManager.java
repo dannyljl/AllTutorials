@@ -9,8 +9,10 @@ import Utility.MySessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+@Stateless
 public class UserManager {
 
     @Inject
