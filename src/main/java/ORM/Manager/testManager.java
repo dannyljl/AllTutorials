@@ -3,11 +3,8 @@ package ORM.Manager;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import ORM.Entity.testEntity;
-import Utility.HibernateUtility;
 import Utility.MySessionFactory;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

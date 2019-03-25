@@ -1,13 +1,9 @@
 package ORM.Manager;
 
 import DTO.UserDTO;
-import Json.UserJson;
-import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
-import Utility.HibernateUtility;
 import Utility.MySessionFactory;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

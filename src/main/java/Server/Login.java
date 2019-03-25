@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/login")
 public class Login {
@@ -20,13 +21,16 @@ public class Login {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public String Login(String userJson){
+    public Response Login(String userJson){
         Gson g = new Gson();
-        UserEntity user = g.fromJson(userJson,UserEntity.class);
-        if (loginManager.attemptLogin(user.getUsername(),user.getPassword()) != null){
-            return "I'm in";
+        UserEntity attemptUser = g.fromJson(userJson,UserEntity.class);
+        UserEntity user;
+        String json = "";
+        user = loginManager.attemptLogin(attemptUser.getUsername(),attemptUser.getPassword());
+        if (user != null){
+             json = g.toJson(user);
         }
-        return "failed";
+        return Response.ok(json).build();
     }
 
     @POST
