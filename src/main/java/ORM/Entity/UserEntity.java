@@ -1,5 +1,7 @@
 package ORM.Entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String name;
+
+    @Column(unique = true)
     private String username;
     private String password;
     private String location;

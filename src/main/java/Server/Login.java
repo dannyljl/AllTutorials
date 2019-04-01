@@ -20,7 +20,7 @@ public class Login {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response Login(String userJson){
         Gson g = new Gson();
         UserEntity attemptUser = g.fromJson(userJson,UserEntity.class);
@@ -36,15 +36,19 @@ public class Login {
     @POST
     @Path("register")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String CreateUser(String userJson){
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response CreateUser(String userJson){
         Gson g = new Gson();
+        String json = "";
+        UserEntity createdUser = null;
         UserEntity user = g.fromJson(userJson,UserEntity.class);
         if (loginManager.CheckAvailable(user.getUsername()) == null){
-            loginManager.CreateUser(user.getUsername(),user.getPassword());
-            return "account created with username:" + user.getUsername().toString();
+            createdUser = loginManager.CreateUser(user.getUsername(),user.getPassword());
+            json = g.toJson(createdUser);
+
         }
-        return "failed";
+        return Response.ok(json).build();
+
     }
 
 

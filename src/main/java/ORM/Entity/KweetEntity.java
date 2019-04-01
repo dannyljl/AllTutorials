@@ -1,5 +1,7 @@
 package ORM.Entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.sql.Date;
 

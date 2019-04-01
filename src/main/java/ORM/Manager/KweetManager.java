@@ -4,7 +4,9 @@ import DTO.KweetDTO;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import Utility.MySessionFactory;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -21,6 +23,9 @@ public class KweetManager {
 
     @Inject
     private MySessionFactory mySessionFactory;
+
+    @Inject
+    private UserManager userManager;
 
 
     public List<KweetDTO> getTimeLine(int userId){
@@ -49,6 +54,22 @@ public class KweetManager {
         }
         return kweetsDTO;
     }
+
+    public List<KweetDTO> getRecentKweets(int userId){
+        Session session = mySessionFactory.getCurrentSession();
+        UserEntity user = session.get(UserEntity.class,userId);
+
+        List<KweetEntity> kweets = session.createQuery("from KweetEntity where user = :user ORDER BY date ASC ")
+                .setParameter("user",userManager.getUserEntity(userId)).setMaxResults(10).getResultList();
+
+        List<KweetDTO> kweetsDTO = new ArrayList<>();
+
+        for (KweetEntity kweet : kweets){
+            kweetsDTO.add(new KweetDTO(kweet));
+        }
+        return kweetsDTO;
+    }
+
 
     public void CreateKweet(int userid, String text){
         KweetEntity kweet = new KweetEntity();

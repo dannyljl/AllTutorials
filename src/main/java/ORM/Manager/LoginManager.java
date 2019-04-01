@@ -47,7 +47,7 @@ public class LoginManager {
         return userEntity;
     }
 
-    public void CreateUser(String username, String password){
+    public UserEntity CreateUser(String username, String password){
         UserEntity user = new UserEntity();
         user.setUsername(username);
         user.setPassword(password);
@@ -55,5 +55,6 @@ public class LoginManager {
         session.getTransaction().begin();
         session.save(user);
         session.getTransaction().commit();
+        return user;
     }
 }

@@ -1,20 +1,17 @@
 package Server;
 
-import ORM.Entity.KweetEntity;
 import ORM.Manager.KweetManager;
-import ORM.Manager.UserManager;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.awt.*;
 
 @Path("/startpage/{userId}")
 public class StartPage {
 
     @Inject
-    KweetManager kweetManager = new KweetManager();
+    KweetManager kweetManager;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

@@ -21,6 +21,13 @@ public class UserManager {
         return new UserDTO(user);
     }
 
+    public UserEntity getUserEntity(int id){
+        Session session = mySessionFactory.getCurrentSession();
+        UserEntity user = session.get(UserEntity.class, id);
+
+        return user;
+    }
+
     public void CreateFollower(int followed, int follower){
         UserEntity user1 = new UserEntity();
         UserEntity user2 = new UserEntity();
@@ -35,8 +42,9 @@ public class UserManager {
     }
 
     public UserDTO editUser(int id, UserDTO userJson){
-        UserEntity user = new UserEntity();
-        user.setUserId(id);
+        UserEntity user = getUserEntity(id);
+        user.setName(userJson.getName());
+        user.setImage(userJson.getImage());
         user.setUsername(userJson.getUsername());
         user.setBio(userJson.getBio());
         user.setLocation(userJson.getLocation());
