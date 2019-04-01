@@ -16,10 +16,10 @@ public class UserDTO {
         this.bio = userEntity.getBio();
         this.image = userEntity.getImage();
         for (UserEntity user : userEntity.getFollowers()){
-            followersId.add(user.getUserId());
+            followers.add(new FollowerDTO(user.getUserId(),user.getName()));
         }
         for (UserEntity user : userEntity.getFollowing()){
-            followingId.add(user.getUserId());
+            followings.add(new FollowerDTO(user.getUserId(),user.getName()));
         }
     }
 
@@ -79,21 +79,22 @@ public class UserDTO {
         this.image = image;
     }
 
-    public List<Integer> getFollowersId() {
-        return followersId;
+    public List<FollowerDTO> getFollowers() {
+        return followers;
     }
 
-    public void setFollowersId(List<Integer> followersId) {
-        this.followersId = followersId;
+    public void setFollowers(List<FollowerDTO> followers) {
+        this.followers = followers;
     }
 
-    public List<Integer> getFollowingId() {
-        return followingId;
+    public List<FollowerDTO> getFollowings() {
+        return followings;
     }
 
-    public void setFollowingId(List<Integer> followingId) {
-        this.followingId = followingId;
+    public void setFollowings(List<FollowerDTO> followings) {
+        this.followings = followings;
     }
+
 
     private int userId;
     private String name;
@@ -102,6 +103,7 @@ public class UserDTO {
     private String web;
     private String bio;
     private String image;
-    private List<Integer> followersId = new ArrayList<>();
-    private List<Integer> followingId = new ArrayList<>();
+
+    private List<FollowerDTO> followers = new ArrayList<>();
+    private List<FollowerDTO> followings = new ArrayList<>();
 }

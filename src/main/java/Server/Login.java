@@ -1,5 +1,6 @@
 package Server;
 
+import DTO.UserDTO;
 import ORM.Entity.UserEntity;
 import ORM.Manager.LoginManager;
 import com.google.gson.Gson;
@@ -24,9 +25,9 @@ public class Login {
     public Response Login(String userJson){
         Gson g = new Gson();
         UserEntity attemptUser = g.fromJson(userJson,UserEntity.class);
-        UserEntity user;
+        UserDTO user;
         String json = "";
-        user = loginManager.attemptLogin(attemptUser.getUsername(),attemptUser.getPassword());
+        user = new UserDTO(loginManager.attemptLogin(attemptUser.getUsername(),attemptUser.getPassword()));
         if (user != null){
              json = g.toJson(user);
         }

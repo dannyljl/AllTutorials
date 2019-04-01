@@ -9,6 +9,7 @@ public class KweetDTO {
     public KweetDTO(KweetEntity kweet) {
         this.kweetId = kweet.getKweetId();
         this.userId = kweet.getUser().getUserId();
+        this.creatorName = kweet.getUser().getName();
         this.content = kweet.getContent();
         this.date = kweet.getDate();
     }
@@ -46,6 +47,7 @@ public class KweetDTO {
     }
     private int kweetId;
     private int userId;
+    private String creatorName;
     private String content;
     private Date date;
 }

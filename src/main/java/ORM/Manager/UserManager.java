@@ -31,8 +31,8 @@ public class UserManager {
     public void CreateFollower(int followed, int follower){
         UserEntity user1 = new UserEntity();
         UserEntity user2 = new UserEntity();
-        user1.setUserId(followed);
-        user2.setUserId(follower);
+        user1 = getUserEntity(followed);
+        user2 = getUserEntity(follower);
         user1.AddFollower(user2);
 
         Session session = mySessionFactory.getCurrentSession();
