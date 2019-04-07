@@ -6,32 +6,36 @@ import com.google.gson.Gson;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-@Path("/startpage/{userId}")
+@Path("/startpage")
 public class StartPage {
 
     @Inject
     KweetManager kweetManager;
 
     @GET
+    @Path("{userId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String GetTimeLine(@PathParam("userId") int userid){
+    public Response GetTimeLine(@PathParam("userId") int userid){
         Gson gson = new Gson();
-        return gson.toJson(kweetManager.getTimeLine(userid));
+
+        String json = gson.toJson(kweetManager.getTimeLine(userid));
+        return Response.ok(json).build();
     }
 
-    @POST
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String CreateKweet(@PathParam("userId") int userid,String content){
+    @PUT
+    @Path("{userId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public void CreateKweet(@PathParam("userId") int userid,String content){
         kweetManager.CreateKweet(userid,content);
-        return "success";
     }
 
     @Path("search")
     @POST
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public String SearchKweet(String searchcontent){
         Gson gson = new Gson();
         return gson.toJson(kweetManager.SearchKweet(searchcontent));
