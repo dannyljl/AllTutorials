@@ -4,9 +4,7 @@ import DTO.KweetDTO;
 import ORM.Entity.KweetEntity;
 import ORM.Entity.UserEntity;
 import Utility.MySessionFactory;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Order;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -71,7 +69,7 @@ public class KweetManager {
     }
 
 
-    public void CreateKweet(int userid, String text){
+    public KweetDTO CreateKweet(int userid, String text){
         KweetEntity kweet = new KweetEntity();
         UserEntity user = new UserEntity();
         user.setUserId(userid);
@@ -84,6 +82,7 @@ public class KweetManager {
         session.getTransaction().begin();
         session.save(kweet);
         session.getTransaction().commit();
+        return new KweetDTO(kweet);
     }
 
     public List<KweetDTO> SearchKweet(String searchContent){

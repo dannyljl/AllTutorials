@@ -1,5 +1,6 @@
 package ORM.Service;
 
+import DTO.UserDTO;
 import ORM.Entity.UserEntity;
 import ORM.Manager.KweetManager;
 import ORM.Manager.LoginManager;
@@ -13,7 +14,7 @@ public class LoginSessionBean {
     @Inject
     private LoginManager loginManager;
 
-    public UserEntity AttemptLogin(String username, String password){
+    public UserDTO AttemptLogin(String username, String password){
         return loginManager.attemptLogin(username,password);
     }
 

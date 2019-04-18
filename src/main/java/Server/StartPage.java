@@ -1,5 +1,6 @@
 package Server;
 
+import DTO.KweetDTO;
 import ORM.Manager.KweetManager;
 import com.google.gson.Gson;
 
@@ -28,8 +29,8 @@ public class StartPage {
     @Path("{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public void CreateKweet(@PathParam("userId") int userid,String content){
-        kweetManager.CreateKweet(userid,content);
+    public KweetDTO CreateKweet(@PathParam("userId") int userid, String content){
+        return kweetManager.CreateKweet(userid,content);
     }
 
     @Path("search")

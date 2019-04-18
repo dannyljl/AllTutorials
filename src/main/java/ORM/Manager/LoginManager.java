@@ -1,5 +1,6 @@
 package ORM.Manager;
 
+import DTO.UserDTO;
 import ORM.Entity.UserEntity;
 import Utility.MySessionFactory;
 import org.hibernate.Session;
@@ -17,18 +18,17 @@ public class LoginManager {
     private MySessionFactory mySessionFactory;
 
 
-    public UserEntity attemptLogin(String username, String password){
+    public UserDTO attemptLogin(String username, String password){
         UserEntity userEntity = null;
-
 
         Session session = mySessionFactory.getCurrentSession();
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<UserEntity> criteriaQuery = criteriaBuilder.createQuery(UserEntity.class);
             Root<UserEntity> root = criteriaQuery.from(UserEntity.class);
-            criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("username"), username),criteriaBuilder.equal(root.get("password"),password));
+            criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("username"), username),criteriaBuilder.equal(root.get("password"),(password)));
             userEntity = session.createQuery(criteriaQuery).uniqueResult();
 
-        return userEntity;
+        return new UserDTO(userEntity);
 
 
     }

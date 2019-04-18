@@ -3,6 +3,7 @@ package Server;
 import DTO.UserDTO;
 import ORM.Entity.UserEntity;
 import ORM.Manager.LoginManager;
+import Utility.LoginContainer;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -17,6 +18,9 @@ public class Login {
     //private EJBInterface ejbinterface;
 
     @Inject
+    private LoginContainer loginContainer;
+
+    @Inject
     private LoginManager loginManager = new LoginManager();
 
     @POST
@@ -25,9 +29,14 @@ public class Login {
     public Response Login(String userJson){
         Gson g = new Gson();
         UserEntity attemptUser = g.fromJson(userJson,UserEntity.class);
-        UserDTO user;
+        UserDTO user = null;
         String json = "";
-        user = new UserDTO(loginManager.attemptLogin(attemptUser.getUsername(),attemptUser.getPassword()));
+        try {
+            user = loginContainer.getUser(attemptUser.getUsername(),attemptUser.getPassword());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
         if (user != null){
              json = g.toJson(user);
         }

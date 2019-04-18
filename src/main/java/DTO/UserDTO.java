@@ -2,10 +2,11 @@ package DTO;
 
 import ORM.Entity.UserEntity;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDTO {
+public class UserDTO implements Principal {
 
     public UserDTO(UserEntity userEntity) {
         this.userId = userEntity.getUserId();

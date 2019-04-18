@@ -1,13 +1,8 @@
 package ORM.Entity;
 
-import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.*;
-import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class UserEntity {
