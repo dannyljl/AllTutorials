@@ -3,6 +3,7 @@ package ORM.Entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import AccountTypes.AccountType;
 
 @Entity
 public class UserEntity {
@@ -31,6 +32,7 @@ public class UserEntity {
     private String web;
     private String bio;
     private String image;
+    private AccountType accountType;
 
     public String getUsername() {
         return username;
@@ -88,6 +90,13 @@ public class UserEntity {
         this.image = image;
     }
 
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
+    }
 
     public void AddFollower(UserEntity follower){
         followers.add(follower);
