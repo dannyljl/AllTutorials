@@ -16,6 +16,7 @@
         <mapping class="ORM.Entity.testEntity"></mapping>
         <mapping class="ORM.Entity.UserEntity"></mapping>
         <mapping class="ORM.Entity.KweetEntity"></mapping>
+        <mapping class="ORM.Entity.TokenEntity"></mapping>
         <!-- DB schema will be updated if needed -->
     </session-factory>
 </hibernate-configuration>

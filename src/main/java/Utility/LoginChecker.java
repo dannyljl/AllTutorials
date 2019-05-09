@@ -1,10 +1,7 @@
 package Utility;
 
 import DTO.UserDTO;
-import ORM.Entity.UserEntity;
 import ORM.Manager.LoginManager;
-
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.security.auth.Subject;

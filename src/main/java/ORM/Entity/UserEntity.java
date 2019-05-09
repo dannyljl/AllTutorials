@@ -1,12 +1,13 @@
 package ORM.Entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import AccountTypes.AccountType;
 
 @Entity
-public class UserEntity {
+public class UserEntity implements Serializable {
 
     public UserEntity(){
 
@@ -32,7 +33,7 @@ public class UserEntity {
     private String web;
     private String bio;
     private String image;
-    private AccountType accountType;
+    private AccountType accountType = AccountType.USER;
 
     public String getUsername() {
         return username;

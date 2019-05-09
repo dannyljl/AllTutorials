@@ -1,12 +1,16 @@
 package ORM.Manager;
 
+import AccountTypes.AccountType;
 import DTO.UserDTO;
+import ORM.Entity.TokenEntity;
 import ORM.Entity.UserEntity;
 import Utility.MySessionFactory;
 import org.hibernate.Session;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 @Stateless
 public class UserManager {
@@ -55,5 +59,23 @@ public class UserManager {
         session.merge(user);
         session.getTransaction().commit();
         return new UserDTO(user);
+    }
+
+    public boolean CheckToken(String token){
+        Session session = mySessionFactory.getCurrentSession();
+
+        TokenEntity tokenEntity = (TokenEntity) session.createQuery("from TokenEntity where token = :token ")
+                                          .setParameter("token",token).getSingleResult();
+        if(tokenEntity != null){
+            return true;
+        }
+        return false;
+    }
+
+    public int getRoleId(int id){
+        Session session = mySessionFactory.getCurrentSession();
+        UserEntity user = session.get(UserEntity.class,id);
+
+        return user.getAccountType().ordinal();
     }
 }

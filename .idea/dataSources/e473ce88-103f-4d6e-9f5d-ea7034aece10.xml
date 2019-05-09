@@ -1215,52 +1215,57 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="283" name="bio">
+    <column id="302" parent="283" name="accountType">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="283" name="image">
+    <column id="303" parent="283" name="bio">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="283" name="location">
+    <column id="304" parent="283" name="image">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="283" name="name">
+    <column id="305" parent="283" name="location">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="283" name="password">
+    <column id="306" parent="283" name="name">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="283" name="username">
+    <column id="307" parent="283" name="password">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="283" name="web">
+    <column id="308" parent="283" name="username">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="309" parent="283" name="UK_bmlfh5xt4kn5ucq55kyoutlwi">
+    <column id="309" parent="283" name="web">
+      <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="310" parent="283" name="UK_bmlfh5xt4kn5ucq55kyoutlwi">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="310" parent="283" name="PRIMARY">
+    <key id="311" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userId</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="311" parent="283" name="UK_bmlfh5xt4kn5ucq55kyoutlwi">
+    <key id="312" parent="283" name="UK_bmlfh5xt4kn5ucq55kyoutlwi">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>UK_bmlfh5xt4kn5ucq55kyoutlwi</UnderlyingIndexName>
     </key>

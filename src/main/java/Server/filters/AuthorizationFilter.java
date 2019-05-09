@@ -2,6 +2,7 @@ package Server.filters;
 
 import AccountTypes.AccountType;
 import Server.bindings.Secured;
+import exceptions.UnauthorizedException;
 
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
@@ -10,6 +11,7 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 import java.lang.reflect.AnnotatedElement;
@@ -44,9 +46,9 @@ public class AuthorizationFilter implements ContainerRequestFilter {
             // Check if the user is allowed to execute the method
             // The method annotations override the class annotations
             if (methodRoles.isEmpty()) {
-                checkPermissions(classRoles);
+                checkPermissions(requestContext ,classRoles);
             } else {
-                checkPermissions(methodRoles);
+                checkPermissions(requestContext,methodRoles);
             }
 
         } catch (Exception e) {
@@ -58,11 +60,11 @@ public class AuthorizationFilter implements ContainerRequestFilter {
     // Extract the roles from the annotated element
     private List<AccountType> extractRoles(AnnotatedElement annotatedElement) {
         if (annotatedElement == null) {
-            return new ArrayList<AccountType>();
+            return new ArrayList<>();
         } else {
             Secured secured = annotatedElement.getAnnotation(Secured.class);
             if (secured == null) {
-                return new ArrayList<AccountType>();
+                return new ArrayList<>();
             } else {
                 AccountType[] allowedRoles = secured.accounttypes();
                 return Arrays.asList(allowedRoles);
@@ -70,8 +72,21 @@ public class AuthorizationFilter implements ContainerRequestFilter {
         }
     }
 
-    private void checkPermissions(List<AccountType> allowedRoles) throws Exception {
+    private void checkPermissions(ContainerRequestContext requestContext, List<AccountType> allowedRoles) throws Exception {
         // Check if the user contains one of the allowed roles
         // Throw an Exception if the user has not permission to execute the method
+        final SecurityContext currentSecurityContext = requestContext.getSecurityContext();
+        boolean permitted = allowedRoles.isEmpty();
+
+        for (AccountType role : allowedRoles) {
+            int roleInt = role.ordinal();
+            if (currentSecurityContext.isUserInRole(Integer.toString(roleInt)))
+                permitted = true;
+        }
+
+        if(!permitted) {
+            int userId = Integer.parseInt(currentSecurityContext.getUserPrincipal().getName());
+            throw new UnauthorizedException("User with ID '" + userId + "' attempted to make an unauthorized request.");
+        }
     }
 }

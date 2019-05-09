@@ -29,16 +29,12 @@ public class Login {
     public Response Login(String userJson){
         Gson g = new Gson();
         UserEntity attemptUser = g.fromJson(userJson,UserEntity.class);
-        UserDTO user = null;
         String json = "";
         try {
-            user = loginContainer.getUser(attemptUser.getUsername(),attemptUser.getPassword());
+            json = g.toJson(loginContainer.getUser(attemptUser.getUsername(),attemptUser.getPassword()));
         }
         catch(Exception e) {
             e.printStackTrace();
-        }
-        if (user != null){
-             json = g.toJson(user);
         }
         return Response.ok(json).build();
     }
