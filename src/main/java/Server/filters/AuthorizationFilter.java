@@ -66,7 +66,7 @@ public class AuthorizationFilter implements ContainerRequestFilter {
             if (secured == null) {
                 return new ArrayList<>();
             } else {
-                AccountType[] allowedRoles = secured.accounttypes();
+                AccountType[] allowedRoles = secured.value();
                 return Arrays.asList(allowedRoles);
             }
         }

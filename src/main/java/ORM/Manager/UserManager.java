@@ -1,6 +1,5 @@
 package ORM.Manager;
 
-import AccountTypes.AccountType;
 import DTO.UserDTO;
 import ORM.Entity.TokenEntity;
 import ORM.Entity.UserEntity;
@@ -9,8 +8,6 @@ import org.hibernate.Session;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
 
 @Stateless
 public class UserManager {

@@ -2,9 +2,9 @@ package Utility;
 
 import DTO.UserDTO;
 import ORM.Manager.LoginManager;
+import SecretJWTKey.constant;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.crypto.MacProvider;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -13,7 +13,6 @@ import javax.security.auth.callback.*;
 import javax.security.auth.login.AppConfigurationEntry;
 import javax.security.auth.login.Configuration;
 import javax.security.auth.login.LoginContext;
-import java.security.Key;
 import java.security.Principal;
 import java.util.HashMap;
 
@@ -25,7 +24,7 @@ public class LoginContainer {
     @Inject
     private LoginManager loginManager;
 
-    public String getUser(String username, String password) throws Exception {
+    public UserDTO getUser(String username, String password) throws Exception {
 
         // 1. the definition of the credentials
         final CallbackHandler callbackHandler = callbacks->{
@@ -79,11 +78,12 @@ public class LoginContainer {
 
         for(final Principal principal : userSubject.getPrincipals()) {
             UserDTO userDTO = (UserDTO) principal;
-            Key key = MacProvider.generateKey();
             String token =
-                    Jwts.builder().setSubject(Integer.toString(userDTO.getUserId())).signWith(SignatureAlgorithm.HS512, key).compact();
-            loginManager.SaveToken(userDTO.getUserId(), token);
-            return token;
+                    Jwts.builder().setSubject(Integer.toString(userDTO.getUserId())).signWith(SignatureAlgorithm.HS256,
+                                                                                              constant.key).compact();
+            userDTO.setToken(loginManager.SaveToken(userDTO.getUserId(), token).getToken());
+
+            return userDTO;
         }
         return null;
 

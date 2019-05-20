@@ -12,5 +12,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
 public @interface Secured {
-    AccountType[] accounttypes() default {};
+    AccountType[] value() default {};
 }

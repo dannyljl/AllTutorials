@@ -33,13 +33,14 @@ public class LoginManager {
         return new UserDTO(userEntity);
     }
 
-    public void SaveToken(int userId, String jwToken) {
+    public TokenEntity SaveToken(int userId, String jwToken) {
         Session session = mySessionFactory.getCurrentSession();
         UserEntity user = session.get(UserEntity.class, userId);
         TokenEntity token = new TokenEntity(user,jwToken,null);
         session.getTransaction().begin();
-        session.save(token);
+        session.saveOrUpdate(token);
         session.getTransaction().commit();
+        return token;
     }
 
     public UserEntity CheckAvailable(String username) {

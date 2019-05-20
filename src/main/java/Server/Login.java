@@ -1,13 +1,15 @@
 package Server;
 
-import DTO.UserDTO;
 import ORM.Entity.UserEntity;
 import ORM.Manager.LoginManager;
 import Utility.LoginContainer;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -51,7 +53,6 @@ public class Login {
         if (loginManager.CheckAvailable(user.getUsername()) == null){
             createdUser = loginManager.CreateUser(user.getUsername(),user.getPassword());
             json = g.toJson(createdUser);
-
         }
         return Response.ok(json).build();
 

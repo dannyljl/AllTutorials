@@ -1,16 +1,13 @@
 package Server.filters;
 
 
-import ORM.Manager.LoginManager;
 import ORM.Manager.UserManager;
+import SecretJWTKey.constant;
 import Server.bindings.Secured;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.impl.crypto.MacProvider;
 
 import javax.annotation.Priority;
-import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -19,9 +16,7 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.ext.Provider;
-import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
-import java.security.Key;
 import java.security.Principal;
 
 @Secured
@@ -113,16 +108,14 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     private void validateToken(String token) throws Exception {
         // Check if the token was issued by the server and if it's not expired
         // Throw an Exception if the token is invalid
-        userManager = CDI.current().select(UserManager.class).get();
         if(userManager.CheckToken(token) == false){
             throw new Exception();
         }
     }
 
     private String getSubjectUserId(String token) {
-        Key key = MacProvider.generateKey();
         Claims claims = Jwts.parser()
-                            .setSigningKey(key)
+                            .setSigningKey(constant.key)
                             .parseClaimsJws(token).getBody();
         return claims.getSubject();
     }

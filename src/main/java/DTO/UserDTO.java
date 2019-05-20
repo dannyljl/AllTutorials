@@ -1,5 +1,6 @@
 package DTO;
 
+import ORM.Entity.TokenEntity;
 import ORM.Entity.UserEntity;
 
 import java.security.Principal;
@@ -7,6 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO implements Principal {
+
+    private int userId;
+    private String name;
+    private String username;
+    private String location;
+    private String web;
+    private String bio;
+    private String image;
+    private String token;
+
+    private List<FollowerDTO> followers = new ArrayList<>();
+    private List<FollowerDTO> followings = new ArrayList<>();
 
     public UserDTO(UserEntity userEntity) {
         this.userId = userEntity.getUserId();
@@ -96,15 +109,11 @@ public class UserDTO implements Principal {
         this.followings = followings;
     }
 
+    public String getToken() {
+        return token;
+    }
 
-    private int userId;
-    private String name;
-    private String username;
-    private String location;
-    private String web;
-    private String bio;
-    private String image;
-
-    private List<FollowerDTO> followers = new ArrayList<>();
-    private List<FollowerDTO> followings = new ArrayList<>();
+    public void setToken(String token) {
+        this.token = token;
+    }
 }
