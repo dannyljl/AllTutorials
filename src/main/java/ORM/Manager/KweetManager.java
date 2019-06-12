@@ -40,10 +40,12 @@ public class KweetManager {
 
         List<KweetEntity> kweets = session.createQuery(criteriaQuery).getResultList();
 
-        for (UserEntity userEntity : user.getFollowing()){
-            criteriaQuery.select(root).where(
-                    criteriaBuilder.or(criteriaBuilder.equal(root.get("user"), userEntity)));
-            kweets.addAll(session.createQuery(criteriaQuery).getResultList());
+        if(user.getFollowing() != null){
+            for (UserEntity userEntity : user.getFollowing()){
+                criteriaQuery.select(root).where(
+                        criteriaBuilder.or(criteriaBuilder.equal(root.get("user"), userEntity)));
+                kweets.addAll(session.createQuery(criteriaQuery).getResultList());
+            }
         }
         List<KweetDTO> kweetsDTO = new ArrayList<>();
 

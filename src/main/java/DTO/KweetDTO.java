@@ -2,9 +2,10 @@ package DTO;
 
 import ORM.Entity.KweetEntity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class KweetDTO {
+public class KweetDTO implements Serializable {
 
     public KweetDTO(KweetEntity kweet) {
         this.kweetId = kweet.getKweetId();

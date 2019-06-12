@@ -7,43 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cbce93b-6fa7-4225-9b41-b6ca65fd2281" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SecretJWTKey/constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/EchoBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/HttpSessionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/JsonDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/JsonEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ORM/Entity/testEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM/Entity/testEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ORM/Manager/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM/Manager/LoginManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/StartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/StartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/bindings/Secured.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/bindings/Secured.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/DTO/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/DTO/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Entity/testEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Entity/testEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Manager/LoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Manager/LoginManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Manager/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/ORM/Manager/UserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/DTO/KweetDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/DTO/KweetDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/StartPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/StartPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthenticationFilter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthenticationFilter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Server/filters/AuthorizationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginContainer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginContainer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebLogEJB_Finished-1.0-SNAPSHOT/WEB-INF/classes/Utility/LoginContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DTO/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DTO/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ORM/Entity/testEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM/Entity/testEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ORM/Manager/LoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM/Manager/LoginManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ORM/Manager/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM/Manager/UserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/StartPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/bindings/Secured.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/filters/AuthenticationFilter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/filters/AuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Server/filters/AuthorizationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utility/LoginChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utility/LoginChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utility/LoginContainer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utility/LoginContainer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utility/LoginContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utility/LoginContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTO/KweetDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DTO/KweetDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server/StartPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/StartPage.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,64 +50,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/Login.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="373">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/stream/JsonReader.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="81" column="119" selection-start-line="81" selection-start-column="119" selection-end-line="81" selection-end-column="119" />
+            <state relative-caret-position="330">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SecretJWTKey/constant.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="177">
+              <caret line="196" selection-start-line="196" selection-end-line="196" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utility/LoginChecker.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utility/HibernateUtility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/ProfilePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="350">
+              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -138,26 +88,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/StartPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="407">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/bindings/Secured.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/JsonEncoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="429">
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/HttpSessionProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/JsonDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+            <state relative-caret-position="322">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/testManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -194,11 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hibernate/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/ORM/Entity/testEntity.java" />
-        <option value="$PROJECT_DIR$/src/ORM/HibernateResources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/ORM/HibernateUtility/HibernateUtility.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/MyApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/ORM/HibernateUtility/HibernateUtility.java" />
@@ -219,10 +191,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ORM/Entity/testEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/ProfilePage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DTO/FollowerDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ORM/Service/LoginSessionBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java" />
         <option value="$PROJECT_DIR$/src/main/Resources/jaas.config" />
         <option value="$PROJECT_DIR$/src/main/java/Enum/AccountType.java" />
         <option value="$PROJECT_DIR$/src/main/java/JWT/JWT.java" />
@@ -242,9 +212,16 @@
         <option value="$PROJECT_DIR$/src/main/java/Constants/constant.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/StartPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/bindings/Secured.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WebSockets/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WebSockets/EchoBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WebSockets/JsonDecoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WebSockets/JsonEncoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/StartPage.java" />
       </list>
     </option>
   </component>
@@ -255,11 +232,21 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="630" />
-    <option name="y" value="105" />
-    <option name="width" value="1147" />
-    <option name="height" value="901" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="WebLogEJB_Finished" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="145" />
+    <option name="width" value="1578" />
+    <option name="height" value="922" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -267,8 +254,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,7 +285,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="AccountTypes" type="462c0819:PsiDirectoryNode" />
+              <item name="DTO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ORM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ORM" type="462c0819:PsiDirectoryNode" />
+              <item name="Manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
@@ -309,24 +311,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="bindings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
@@ -341,30 +325,15 @@
               <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="WebSockets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllTutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AllTutorials" type="b2602c69:ProjectViewProjectNode" />
@@ -375,17 +344,19 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558344323011" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558959197586" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../websockets demo/jsr356-demo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -395,19 +366,20 @@
     <property name="ts.external.directory.path" value="C:\Users\danny\Desktop\school\semester 6\JEA\AllTutorials\ng7\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="exceptions" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\danny\Desktop\school\semester 6\JEA\AllTutorials\src\main\webapp\view" />
-      <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\hibernate\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\src\main\Resources" />
       <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\src\main\java" />
       <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\src\main\java\Server" />
       <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\src\main\webapp" />
       <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\src\HibernateResources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danny\Desktop\school\semester 6\JEA\AllTutorials\src\main\java\WebSockets" />
+      <recent name="C:\Users\danny\Desktop\school\semester 6\JEA\AllTutorials\src\main\webapp\view" />
+      <recent name="C:\Users\Danny\Desktop\Semester 6\RestTutorial\hibernate\src" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="exceptions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -582,12 +554,20 @@
       <workItem from="1557731969172" duration="4808000" />
       <workItem from="1557739174694" duration="2721000" />
       <workItem from="1558337276757" duration="5886000" />
-      <workItem from="1558344344961" duration="13000" />
+      <workItem from="1558344344961" duration="1082000" />
+      <workItem from="1558346095589" duration="599000" />
+      <workItem from="1558422105763" duration="578000" />
+      <workItem from="1558941844891" duration="6633000" />
+      <workItem from="1559028243381" duration="784000" />
+      <workItem from="1559543028087" duration="8254000" />
+      <workItem from="1559573215424" duration="599000" />
+      <workItem from="1559736803204" duration="842000" />
+      <workItem from="1560354397835" duration="4037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255299000" />
+    <option name="totallyTimeSpent" value="278694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,10 +579,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="145" y="0" width="1578" height="922" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8368902" visible="true" weight="0.18763326" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8368902" visible="true" weight="0.16337286" />
       <window_info id="Structure" order="1" sideWeight="0.16310975" side_tool="true" weight="0.13113007" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -613,8 +593,8 @@
       <window_info id="Persistence" order="8" sideWeight="0.16310975" side_tool="true" weight="0.13113007" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4990476" weight="0.32642487" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76106197" weight="0.3748702" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.52132195" weight="0.29698858" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76106197" weight="0.38149557" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.52132195" visible="true" weight="0.2940431" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.3281412" />
@@ -622,7 +602,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32729805" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23893805" side_tool="true" weight="0.2902829" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.4610874" visible="true" weight="0.22222222" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4610874" weight="0.22179975" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3281412" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32949308" />
@@ -631,15 +611,15 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.1521739" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.49183476" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="JSF" order="9" />
-      <window_info anchor="right" id="CDI" order="10" weight="0.32994187" />
-      <window_info anchor="right" id="Bean Validation" order="11" weight="0.3297609" />
+      <window_info anchor="right" id="CDI" order="10" weight="0.3297568" />
+      <window_info anchor="right" id="Bean Validation" order="11" visible="true" weight="0.14295125" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,22 +681,10 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Server/Test.java</url>
           <line>16</line>
           <properties />
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Server/Test.java</url>
@@ -743,40 +711,46 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java</url>
-          <line>36</line>
+          <url>file://$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java</url>
+          <line>54</line>
           <properties />
-          <option name="timeStamp" value="49" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java</url>
-          <line>110</line>
+          <url>file://$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java</url>
+          <line>46</line>
           <properties />
-          <option name="timeStamp" value="50" />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java</url>
-          <line>61</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java</url>
+          <line>58</line>
           <properties />
-          <option name="timeStamp" value="53" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Server/StartPage.java</url>
-          <line>41</line>
+          <line>29</line>
           <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java</url>
-          <line>58</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java</url>
+          <line>29</line>
           <properties />
-          <option name="timeStamp" value="57" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java</url>
-          <line>59</line>
+          <url>file://$PROJECT_DIR$/src/main/java/WebSockets/JsonDecoder.java</url>
+          <line>30</line>
           <properties />
-          <option name="timeStamp" value="58" />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -797,100 +771,12 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EJB/SessionFactoryTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/editUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/EJB/EJBInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EJB/HelloWorldEJB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Json/UserJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RestTutorial.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/bierOpKleur.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Resources/jaas.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Service/LoginSessionBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/security/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JWT/JWT.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/authenticationexample.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/UnauthorizedException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -912,13 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
           <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -947,13 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/CORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -999,13 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="112" column="20" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Entity/testEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1027,59 +892,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/ModeratorPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/LoginManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-340">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/testManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="119" selection-start-line="81" selection-start-column="119" selection-end-line="81" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -1097,27 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/HibernateUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/ProfilePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/bindings/Secured.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1125,17 +920,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/StartPage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="1156">
+          <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthorizationFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/bierOpKleur.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+        <state relative-caret-position="51">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/CORSFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/HibernateUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/EchoBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/filters/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DTO/KweetDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utility/LoginContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/ModeratorPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/ProfilePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final-sources.jar!/org/jboss/logging/JDKLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final-sources.jar!/org/jboss/logging/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="2254" selection-start-line="2254" selection-end-line="2254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/Gson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="538" selection-start-line="538" selection-end-line="538" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/JsonEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/stream/JsonReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/HttpSessionProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/ServerEchoEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/testManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/StartPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ORM/Manager/KweetManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WebSockets/JsonDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

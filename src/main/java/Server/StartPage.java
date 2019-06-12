@@ -33,7 +33,7 @@ public class StartPage {
         return Response.ok(json).build();
     }
 
-    @Secured({AccountType.ADMIN})
+    @Secured({AccountType.USER})
     @PUT
     @Path("{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
