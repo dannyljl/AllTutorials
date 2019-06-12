@@ -6,12 +6,17 @@
 
 package WebSockets;
 
+import DTO.FollowerDTO;
 import DTO.KweetDTO;
+import ORM.Entity.UserEntity;
+import ORM.Manager.KweetManager;
+import ORM.Manager.UserManager;
+import com.google.gson.Gson;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 import javax.websocket.CloseReason;
-import javax.websocket.EndpointConfig;
+import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -19,59 +24,75 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author jgeenen
  */
 @ServerEndpoint(
-    value = "/echo-socket",
-    encoders = JsonEncoder.class,
-    decoders = JsonDecoder.class,
-    configurator = HttpSessionProvider.class
+        value = "/echo-socket/{userId}",
+        encoders = JsonEncoder.class,
+        decoders = JsonDecoder.class
 )
 public class ServerEchoEndpoint {
-    
+
     private static final Logger LOG = Logger.getLogger(ServerEchoEndpoint.class.getName());
 
-    @Inject
-    private EchoBean ECHO_BEAN;
-    
     private HttpSession httpSession;
-    
+
+    private static HashMap<String, Session> onlineUsers = new HashMap<>();
+
     private Session session;
-    
+
+    @Inject
+    UserManager userManager;
+
     @OnOpen
-    public void onOpen(EndpointConfig endpointConfig, Session session){
-        this.httpSession = HttpSessionProvider.provide(endpointConfig);
+    public void onOpen(Session session, @PathParam("userId") String userId) {
+        System.out.println("pathparam: " + userId);
+        System.out.println("onopen Session:" + session.getId());
+        onlineUsers.put(userId, session);
         this.session = session;
-        LOG.log(Level.INFO, "onOpen: endpointConfig: {0}, session: {1}", new Object[]{endpointConfig, session});
+        LOG.log(Level.INFO, "onOpen: endpointConfig: {0}, session: {1}", new Object[]{session});
     }
-    
+
     @OnMessage
-    public void onMessage(Session session, KweetDTO message){
+    public void onMessage(Session session, KweetDTO message) {
         LOG.log(Level.INFO, "received message with text: {0}", message.getContent());
-        ECHO_BEAN.send(session, message, 2, 1000, 1.2);
+
+        System.out.println("onmessage Session:" + session.getId());
+        try {
+            broadcast(session, message);
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+        catch(EncodeException e) {
+            e.printStackTrace();
+        }
     }
-    
+
     @OnClose
-    public void onClose(Session session, CloseReason closeReason){
+    public void onClose(Session session, CloseReason closeReason,@PathParam("userId") String userId ) {
         LOG.log(Level.INFO, "session {0} closed with reason {1}", new Object[]{session, closeReason});
-        try{
+        try {
+            onlineUsers.remove(userId);
             httpSession.invalidate();
-        } catch(IllegalStateException ise){
+        }
+        catch(IllegalStateException ise) {
             //swallow: httpSession allready expired
         }
     }
-    
+
     @OnError
-    public void onError(Session session, Throwable throwable){
+    public void onError(Session session, Throwable throwable) {
         LOG.log(
-            Level.WARNING, 
-            new StringBuilder("an error occured for session ").append(session).toString(), 
-            throwable
+                Level.WARNING,
+                new StringBuilder("an error occured for session ").append(session).toString(),
+                throwable
         );
     }
 
@@ -82,5 +103,17 @@ public class ServerEchoEndpoint {
     public HttpSession getHttpSession() {
         return httpSession;
     }
-    
-}
+
+    private void broadcast(Session session, KweetDTO message)
+            throws IOException, EncodeException {
+        Gson gson = new Gson();
+        session.getBasicRemote().
+                sendText(gson.toJson(message));
+        for(FollowerDTO follower: userManager.getUser(message.getUserId()).getFollowers()
+            ) {
+            if(onlineUsers.containsKey(follower.getUserId())){
+                onlineUsers.get(follower.getUserId()).getBasicRemote().sendText(gson.toJson(message));
+            }
+        }
+        }
+    }

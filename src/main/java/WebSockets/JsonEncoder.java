@@ -14,7 +14,7 @@ import javax.websocket.Encoder;
 import javax.websocket.EndpointConfig;
 
 /**
- * Encodes {@link Message}s to JSON
+ * Encodes {@link KweetDTO}s to JSON
  * @author jgeenen
  */
 public class JsonEncoder implements Encoder.Text<KweetDTO> {

@@ -3,16 +3,21 @@ package DTO;
 import ORM.Entity.KweetEntity;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class KweetDTO implements Serializable {
+
+    private int kweetId;
+    private int userId;
+    private String creatorName;
+    private String content;
+    private String date;
 
     public KweetDTO(KweetEntity kweet) {
         this.kweetId = kweet.getKweetId();
         this.userId = kweet.getUser().getUserId();
         this.creatorName = kweet.getUser().getName();
         this.content = kweet.getContent();
-        this.date = kweet.getDate();
+        this.date = kweet.getDate().toString();
     }
 
     public int getKweetId() {
@@ -38,17 +43,4 @@ public class KweetDTO implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    private int kweetId;
-    private int userId;
-    private String creatorName;
-    private String content;
-    private Date date;
 }

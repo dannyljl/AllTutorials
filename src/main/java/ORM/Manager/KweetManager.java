@@ -15,6 +15,7 @@ import javax.persistence.criteria.Root;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.LongFunction;
 
 @Stateless
 public class KweetManager {
@@ -60,7 +61,7 @@ public class KweetManager {
         UserEntity user = session.get(UserEntity.class,userId);
 
         List<KweetEntity> kweets = session.createQuery("from KweetEntity where user = :user ORDER BY date ASC ")
-                .setParameter("user",userManager.getUserEntity(userId)).setMaxResults(10).getResultList();
+                .setParameter("user",user).setMaxResults(10).getResultList();
 
         List<KweetDTO> kweetsDTO = new ArrayList<>();
 

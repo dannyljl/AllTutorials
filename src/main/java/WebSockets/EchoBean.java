@@ -25,17 +25,13 @@ import java.io.IOException;
 @TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class EchoBean {
 
-    @EJB
-    private EchoBean delegate;
-
     @Asynchronous
-    public void send(Session session, KweetDTO message, int repeats, long delay, double delayMultiplier ){
+    public void send(Session session, KweetDTO message){
         try {
             synchronized(session){
                 session.getBasicRemote().sendObject(message);
             }
-            Thread.sleep(delay);
-        } catch (InterruptedException | IOException | EncodeException ex) {
+        } catch (IOException | EncodeException ex) {
             throw new IllegalStateException(ex);
         }
         }

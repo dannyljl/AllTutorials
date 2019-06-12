@@ -14,7 +14,7 @@ import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
 
 /**
- * Decodes {@link Message}s from JSON
+ * Decodes {@link KweetDTO}s from JSON
  * @author jgeenen
  */
 public class JsonDecoder implements Decoder.Text<KweetDTO>{
@@ -28,6 +28,7 @@ public class JsonDecoder implements Decoder.Text<KweetDTO>{
     
     @Override
     public KweetDTO decode(String arg0) throws DecodeException {
+
         return gson.fromJson(arg0, KweetDTO.class);
     }
 
