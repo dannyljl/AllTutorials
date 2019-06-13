@@ -1,13 +1,20 @@
 package ORM.Manager;
 
+import DTO.FollowerDTO;
+import DTO.KweetDTO;
 import DTO.UserDTO;
+import ORM.Entity.KweetEntity;
 import ORM.Entity.TokenEntity;
 import ORM.Entity.UserEntity;
 import Utility.MySessionFactory;
+import com.google.gson.Gson;
 import org.hibernate.Session;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.persistence.Query;
+import java.util.ArrayList;
+import java.util.List;
 
 @Stateless
 public class UserManager {
@@ -23,9 +30,10 @@ public class UserManager {
     }
 
     public UserEntity getUserEntity(int id){
+        Gson gson = new Gson();
         Session session = mySessionFactory.getCurrentSession();
         UserEntity user = session.get(UserEntity.class, id);
-
+        System.out.println("get user simple right?" + gson.toJson(user));
         return user;
     }
 
@@ -34,11 +42,10 @@ public class UserManager {
         UserEntity user2 = new UserEntity();
         user1 = getUserEntity(followed);
         user2 = getUserEntity(follower);
-        user1.AddFollower(user2);
-
+        user2.addFollowing(user1);
         Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();
-        session.merge(user1);
+        session.merge(user2);
         session.getTransaction().commit();
     }
 

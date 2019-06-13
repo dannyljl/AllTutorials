@@ -56,7 +56,6 @@ public class testManager {
         UserEntity user2 = new UserEntity();
         user1.setUserId(1);
         user2.setUserId(2);
-        user1.AddFollower(user2);
 
         Session session = mySessionFactory.getCurrentSession();
         session.getTransaction().begin();

@@ -41,8 +41,6 @@ public class ServerEchoEndpoint {
 
     private static final Logger LOG = Logger.getLogger(ServerEchoEndpoint.class.getName());
 
-    private HttpSession httpSession;
-
     private static HashMap<String, Session> onlineUsers = new HashMap<>();
 
     private Session session;
@@ -80,7 +78,6 @@ public class ServerEchoEndpoint {
         LOG.log(Level.INFO, "session {0} closed with reason {1}", new Object[]{session, closeReason});
         try {
             onlineUsers.remove(userId);
-            httpSession.invalidate();
         }
         catch(IllegalStateException ise) {
             //swallow: httpSession allready expired
@@ -100,16 +97,15 @@ public class ServerEchoEndpoint {
         return session;
     }
 
-    public HttpSession getHttpSession() {
-        return httpSession;
-    }
-
     private void broadcast(Session session, KweetDTO message)
             throws IOException, EncodeException {
         Gson gson = new Gson();
         session.getBasicRemote().
                 sendText(gson.toJson(message));
-        for(FollowerDTO follower: userManager.getUser(message.getUserId()).getFollowers()
+        System.out.println("hier begint het: ");
+        System.out.println(gson.toJson(message));
+        System.out.println("en dit is de gebruiker: " + gson.toJson(userManager.getUserEntity(message.getUserId()).getFollowingMe()));
+        for(UserEntity follower: userManager.getUserEntity(message.getUserId()).getFollowingMe()
             ) {
             if(onlineUsers.containsKey(follower.getUserId())){
                 onlineUsers.get(follower.getUserId()).getBasicRemote().sendText(gson.toJson(message));

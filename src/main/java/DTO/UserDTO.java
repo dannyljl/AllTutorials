@@ -18,7 +18,7 @@ public class UserDTO implements Principal {
     private String image;
     private String token;
 
-    private List<FollowerDTO> followers = new ArrayList<>();
+    private List<FollowerDTO> followingMe = new ArrayList<>();
     private List<FollowerDTO> followings = new ArrayList<>();
 
     public UserDTO(UserEntity userEntity) {
@@ -29,11 +29,11 @@ public class UserDTO implements Principal {
         this.web = userEntity.getWeb();
         this.bio = userEntity.getBio();
         this.image = userEntity.getImage();
-        for (UserEntity user : userEntity.getFollowers()){
-            followers.add(new FollowerDTO(user.getUserId(),user.getName()));
-        }
         for (UserEntity user : userEntity.getFollowing()){
             followings.add(new FollowerDTO(user.getUserId(),user.getName()));
+        }
+        for (UserEntity user : userEntity.getFollowingMe()){
+            followingMe.add(new FollowerDTO(user.getUserId(),user.getName()));
         }
     }
 
@@ -93,12 +93,12 @@ public class UserDTO implements Principal {
         this.image = image;
     }
 
-    public List<FollowerDTO> getFollowers() {
-        return followers;
+    public List<FollowerDTO> getFollowingMe() {
+        return followingMe;
     }
 
-    public void setFollowers(List<FollowerDTO> followers) {
-        this.followers = followers;
+    public void setFollowingMe(List<FollowerDTO> followingMe) {
+        this.followingMe = followingMe;
     }
 
     public List<FollowerDTO> getFollowings() {

@@ -9,18 +9,6 @@ import AccountTypes.AccountType;
 @Entity
 public class UserEntity implements Serializable {
 
-    public UserEntity(){
-
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int id) {
-        this.userId = id;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
@@ -34,6 +22,18 @@ public class UserEntity implements Serializable {
     private String bio;
     private String image;
     private AccountType accountType = AccountType.USER;
+
+    public UserEntity(){
+
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int id) {
+        this.userId = id;
+    }
 
     public String getUsername() {
         return username;
@@ -99,25 +99,6 @@ public class UserEntity implements Serializable {
         this.accountType = accountType;
     }
 
-    public void AddFollower(UserEntity follower){
-        followers.add(follower);
-    }
-
-    public List<UserEntity> getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(List<UserEntity> followers) {
-        this.followers = followers;
-    }
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name="followers",
-            joinColumns={@JoinColumn(name="followedId")},
-            inverseJoinColumns={@JoinColumn(name="followerId")})
-    @ElementCollection(targetClass = UserEntity.class)
-    private List<UserEntity> followers = new ArrayList<>();
-
     public List<UserEntity> getFollowing() {
         return following;
     }
@@ -126,11 +107,24 @@ public class UserEntity implements Serializable {
         this.following = following;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name="followers",
-            joinColumns={@JoinColumn(name="followerId")},
-            inverseJoinColumns={@JoinColumn(name="followedId")})
-    @ElementCollection(targetClass = UserEntity.class)
+            joinColumns={@JoinColumn(name="followerId",referencedColumnName = "userId")},
+            inverseJoinColumns={@JoinColumn(name="followedId",referencedColumnName = "userId")})
     private List<UserEntity> following = new ArrayList<>();
 
+    public void addFollowing(UserEntity userEntity){
+        following.add(userEntity);
+    }
+
+    @ManyToMany(mappedBy = "following")
+    private List<UserEntity> followingMe = new ArrayList<>();
+
+    public List<UserEntity> getFollowingMe() {
+        return followingMe;
+    }
+
+    public void setFollowingMe(List<UserEntity> followingMe) {
+        this.followingMe = followingMe;
+    }
 }
