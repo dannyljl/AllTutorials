@@ -33,7 +33,6 @@ public class UserManager {
         Gson gson = new Gson();
         Session session = mySessionFactory.getCurrentSession();
         UserEntity user = session.get(UserEntity.class, id);
-        System.out.println("get user simple right?" + gson.toJson(user));
         return user;
     }
 

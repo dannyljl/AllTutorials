@@ -3,6 +3,9 @@ package ORM.Entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import AccountTypes.AccountType;
 
@@ -99,25 +102,29 @@ public class UserEntity implements Serializable {
         this.accountType = accountType;
     }
 
-    public List<UserEntity> getFollowing() {
+    public Collection<UserEntity> getFollowing() {
         return following;
+    }
+
+    public void setFollowing(Collection<UserEntity> following) {
+        this.following = following;
     }
 
     public void setFollowing(List<UserEntity> following) {
         this.following = following;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="followers",
             joinColumns={@JoinColumn(name="followerId",referencedColumnName = "userId")},
             inverseJoinColumns={@JoinColumn(name="followedId",referencedColumnName = "userId")})
-    private List<UserEntity> following = new ArrayList<>();
+    private Collection<UserEntity> following = new LinkedHashSet<>();
 
     public void addFollowing(UserEntity userEntity){
         following.add(userEntity);
     }
 
-    @ManyToMany(mappedBy = "following")
+    @ManyToMany(mappedBy = "following", fetch = FetchType.EAGER)
     private List<UserEntity> followingMe = new ArrayList<>();
 
     public List<UserEntity> getFollowingMe() {
